@@ -12,7 +12,7 @@ var muhlecustomcontracting = {
       var placeholderName = $(this).attr('id');
       var placeholderText = $(this).attr('placeholder');
       var placeholder = $('<label for='+ $(this).attr('id') +'>'+ placeholderText + '</label>');
-      placeholder.attr('style', 'position: absolute; cursor: text; left: 8px; top: 8px; font-size: 10px; color: #AAAAAA;');
+      placeholder.attr('style', 'position: absolute; cursor: text; left: 12px; top: 12px; font-size: 10px; color: #AAAAAA;');
       
       $(this).before(placeholder);
       
