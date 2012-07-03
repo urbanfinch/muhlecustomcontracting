@@ -1,6 +1,28 @@
 var muhlecustomcontracting = {
+  background_image: 0,
+  
   run: function() {
+    muhlecustomcontracting.initBackgroundImages();
     muhlecustomcontracting.addPlaceholders();
+  },
+  
+  initBackgroundImages: function() {
+    muhlecustomcontracting.background_image = Math.floor(Math.random() * $('div.background img').length);
+    
+    $('div.background img').hide();
+    $('div.background img:eq(' + muhlecustomcontracting.background_image + ')').fadeIn(1000);
+    
+    var backgroundInterval = window.setInterval(function() {
+      console.log(muhlecustomcontracting.background_image);
+      $('div.background img:eq(' + muhlecustomcontracting.background_image + ')').fadeOut(1000, function() {
+        if (muhlecustomcontracting.background_image >= ($('div.background img').length - 1)) {
+          muhlecustomcontracting.background_image = 0;
+        } else {
+          muhlecustomcontracting.background_image += 1;
+        }
+        $('div.background img:eq(' + muhlecustomcontracting.background_image + ')').fadeIn(1000);
+      });
+    }, 8000);
   },
   
   addPlaceholders: function() {
