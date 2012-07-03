@@ -3,8 +3,8 @@ class Mailer < ActionMailer::Base
     @params = params
     
     mail(
-      :to      => "recipient@muhlecustomcontracting.com",
-      :from    => "mailer@muhlecustomcontracting.com",
+      :to      => "chadmuhle@yahoo.com",
+      :from    => @params[:email],
       :subject => "Contact from muhlecustomcontracting.com") do |format|
         format.text
         format.html

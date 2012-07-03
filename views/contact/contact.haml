@@ -18,12 +18,12 @@
     opportunities of service that I can provide.  I look forward to hearing from you soon!
   %form{:id => 'contact', :action => '/contact/send', :method => 'post'}
     %div
-      %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name:'}
+      %input{:id => 'name', :name => 'contact[name]', :type => 'text', :placeholder => 'Name:'}
     %div
-      %input{:id => 'email', :name => 'email', :type => 'text', :placeholder => 'E-Mail:'}
+      %input{:id => 'email', :name => 'contact[email]', :type => 'text', :placeholder => 'E-Mail:'}
     %div
-      %input{:id => 'phone', :name => 'email', :type => 'text', :placeholder => 'Phone:'}
+      %input{:id => 'phone', :name => 'contact[phone]', :type => 'text', :placeholder => 'Phone:'}
     %div
-      %textarea{:id => 'message', :name => 'message', :placeholder => 'Message:', :cols => '70', :rows => '15'}
+      %textarea{:id => 'message', :name => 'contact[message]', :placeholder => 'Message:', :cols => '70', :rows => '15'}
     %div
-      %input{:id => 'send', :name => 'send', :type => 'submit', :value => 'Send'}
+      %input{:id => 'send', :name => 'contact[send]', :type => 'submit', :value => 'Send'}
