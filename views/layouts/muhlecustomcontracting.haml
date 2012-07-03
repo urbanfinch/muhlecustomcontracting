@@ -37,6 +37,48 @@
   %body
     .container
       %header
+        .background
+          %img{:src => '/images/background_1.png', :alt => 'background_1'}
+        .banner
+        .logo
+          %a{:href => '/', :title => 'Muhle Custom Contracting'} 
+            Muhle Custom Contracting
+            %img{:src => '/images/logo.png', :alt => 'logo'}
+        .nav
+          %nav
+            %a{:href => '/home', :title => 'Home', :class => "#{'selected' if params[:section] == 'home'}"} Home
+            %a{:href => '/about', :title => 'About', :class => "#{'selected' if params[:section] == 'about'}"} About
+            %a{:href => '/custom_homes', :title => 'Custom Homes', :class => "#{'selected' if params[:section] == 'custom_homes'}"} Custom Homes
+            %a{:href => '/remodels', :title => 'Remodels', :class => "#{'selected' if params[:section] == 'remodels'}"} Remodels
+            %a{:href => '/virtual_tour', :title => 'Virtual Tour', :class => "#{'selected' if params[:section] == 'virtual_tour'}"} Virtual Tour
+            %a{:href => '/testimonials', :title => 'Testimonials', :class => "#{'selected' if params[:section] == 'testimonials'}"} Testimonials
+            %a{:href => '/links', :title => 'Links', :class => "#{'selected' if params[:section] == 'links'}"} Links
+            %a{:href => '/contact', :title => 'Contact', :class => "#{'selected' if params[:section] == 'contact'}"} Contact
+        .heading
+          %h1{:id => 'content'}= @content_title
+          %h1{:id => 'sidebar'} Digital Elevations
       %section
-        = yield
+        .content
+          = yield
+        .sidebar
+          %figure
+            %img{:src => '/images/elevation_1.png', :alt => 'elevation_1'}
+            %figcaption 17812 Bel Air Circle Omaha, NE 68136
+          %figure
+            %img{:src => '/images/elevation_2.png', :alt => 'elevation_2'}
+            %figcaption 17201 Colony Drive Omaha, NE 68136
+          %figure
+            %img{:src => '/images/elevation_3.png', :alt => 'elevation_3'}
+            %figcaption 19016 Pierce Plaza Circle Omaha, NE 68130
+          %figure
+            %img{:src => '/images/elevation_4.png', :alt => 'elevation_4'}
+            %figcaption 948 South 198th Street Elkhorn, NE 68022
+          %figure
+            %img{:src => '/images/elevation_5.png', :alt => 'elevation_5'}
+            %figcaption 21401 Walnut Street Elkhorn, NE 68022
       %footer
+        %h1 Muhle Custom Contracting
+        %p P: 402.709.4334
+        %p
+          E:
+          %a{:href => 'mailto:chadmuhle@yahoo.com'} chadmuhle@yahoo.com

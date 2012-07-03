@@ -1,2 +1,318 @@
 @import "compass"
 @import "compass/reset"
+
+/* Colors */
+
+$white: #FFFFFF
+$black: #000000
+$green: #2E8007
+$lighter-gray: #BFBFBF
+$light-gray: #CCCCCC
+$dark-gray: #393939
+
+/* Fonts */
+
+$lucida: Lucida Sans Unicode, Lucida Grande, sans-serif
+$georgia: Georgia, serif
+
+/* Tags */
+
+body, html
+  background-color: $black
+  font-family: $georgia
+  font-size: 14px
+  color: $dark-gray
+  
+  .container
+    width: 960px
+    margin: 0px auto
+    
+    header
+      position: relative
+      width: 960px
+      height: 560px
+      
+      div.background
+        position: absolute
+        top: 0px
+        left: 0px
+        width: 960px
+        height: 560px
+          
+        img
+          display: block
+          width: inherit
+          height: inherit
+            
+      div.banner
+        position: absolute
+        top: 0px
+        width: 960px
+        height: 39px
+        border-bottom: 1px $black solid
+        background-color: rgba(0, 0, 0, 0.4)
+        
+      div.logo
+        position: absolute
+        width: 164px
+        height: 132px
+        top: 25px
+        left: 40px
+        background-color: $dark-gray
+        
+        a
+          display: block
+          width: 164px
+          height: 132px
+          line-height: 0px
+          text-indent: -9999px
+          
+          img
+            display: block
+            width: 164px
+            height: 132px
+        
+      div.nav
+        position: absolute
+        width: 960px
+        height: 68px
+        bottom: 52px
+        background-color: rgba(0, 0, 0, 0.7)
+        
+        nav
+          width: 880px
+          height: 68px
+          margin: 0px 40px
+          
+          a
+            display: block
+            float: left
+            width: 110px
+            height: 68px
+            line-height: 68px
+            font-family: $lucida
+            font-size: 12px
+            text-transform: uppercase
+            text-align: center
+            text-decoration: none
+            color: $white
+            
+          a:hover,
+          a.selected
+            background-color: rgba($green, 0.9)
+        
+      div.heading
+        position: absolute
+        width: 960px
+        height: 52px
+        bottom: 0px
+        background-color: rgba(0, 0, 0, 0.8)
+        
+        h1
+          float: left
+          height: inherit
+          line-height: 52px
+          font-family: $lucida
+          font-size: 16px
+          text-transform: uppercase
+          text-align: center
+          
+        h1#content
+          width: 570px
+          margin-left: 40px
+          padding-left: 40px
+          text-align: left
+          color: $lighter-gray
+          
+        h1#sidebar
+          width: 270px
+          margin-right: 40px
+          color: $green
+      
+    section
+      width: 880px
+      margin: 0px auto
+      
+      div.content
+        float: left
+        width: 610px
+        min-height: 700px
+        background-color: $light-gray
+        color: $dark-gray
+        
+        h1
+          height: 52px
+          line-height: 52px
+          padding-left: 40px
+          font-family: $lucida
+          font-size: 16px
+          text-transform: uppercase
+          text-align: left
+          background-color: rgba(0, 0, 0, 0.9)
+          color: $lighter-gray
+          
+        hr
+          width: 610px
+          height: 10px
+          margin: 0px
+          margin-bottom: 40px
+          padding: 0px
+          border: none
+          outline: none
+          background-image: url('/images/indicator.png')
+          background-position: 40px
+          background-repeat: no-repeat
+          
+        p
+          line-height: 20px
+          margin: 0px 40px
+          margin-bottom: 40px
+          
+          img
+            display: inline
+            float: right
+            margin-left: 10px
+            margin-bottom: 10px
+            border: 1px $dark-gray solid
+            
+        object
+          width: 530px
+          margin: 0px 40px
+          margin-bottom: 40px
+          
+        blockquote,
+        cite
+          display: block
+          margin: 0px 40px
+          margin-bottom: 10px
+          font-style: italic
+          font-size: 13px
+          color: $green
+          
+        cite
+          color: $dark-gray
+          
+        form
+          display: block
+          width: 530px
+          margin-left: 40px
+          
+          div
+            margin-bottom: 20px
+            
+            input[type=text],
+            textarea
+              display: block
+              width: 508px
+              max-width: 508px
+              padding: 10px
+              border: 1px $dark-gray solid
+              
+            input[type=submit]
+              display: block
+              padding: 10px 20px
+              margin: 0px
+              border: 1px $dark-gray solid
+              background-color: $green
+              color: $white
+              cursor: pointer
+              
+          div:last-child
+            margin-bottom: 40px
+            
+        div#custom_homes,
+        div#remodels
+          div.thumbnails
+            a
+              display: block
+              float: left
+              width: 243px
+              margin-left: 40px
+              margin-bottom: 40px
+              
+              img
+                width: inherit
+                height: inherit
+                border: 1px $dark-gray solid
+                
+        div#about,
+        div#virtual_tour,
+        div#links
+          img
+            display: block
+            width: 528px
+            margin-left: 40px
+            border: 1px $dark-gray solid
+          
+        div#links
+          img
+            border: none
+            
+        div#virtual_tour,
+        div#links
+          img
+            margin-bottom: 40px
+            
+        div#contact
+          p#address
+            display: block
+            font-size: 20px
+            line-height: 24px
+            
+            span.phone
+              color: $green
+            
+            a
+              color: $dark-gray
+            
+        
+      div.sidebar
+        float: left
+        width: 270px
+        background-color: $dark-gray
+        
+        figure
+          position: relative
+          width: 270px
+          height: 140px
+          
+          img
+            position: absolute
+            display: block
+            width: 270px
+            height: 140px
+            
+          figcaption
+            position: absolute
+            right: 0px
+            bottom: 5px
+            height: 20px
+            line-height: 20px
+            padding: 0px 5px
+            font-size: 12px
+            text-align: center
+            background-color: rgba(0, 0, 0, 0.4)
+            color: $light-gray
+        
+    footer
+      clear: both
+      width: 880px
+      height: 80px
+      padding: 40px 0px
+      margin: 0px auto
+      
+      h1
+        font-size: 30px
+        margin-bottom: 20px
+        font-family: $lucida
+        text-align: right
+        text-transform: uppercase
+        
+      p
+        font-size: 16px
+        margin-bottom: 10px
+        text-align: right
+        
+        a
+          color: $dark-gray
+    

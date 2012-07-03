@@ -1,0 +1,14 @@
+#virtual_tour
+  - @content_title = "Brought To You By CBS Homes"
+  %hr
+  %img{:src => '/images/ralph.png', :alt => 'ralph'}
+  %h1 Take The Virtual Tour
+  %hr
+  %object{:type => "application/x-shockwave-flash", :data => "http://pixotour.s3.amazonaws.com/slideshowpro.swf", :width => "530", :height => "400", :id => "photobox", :style => "visibility: visible;"}
+    %param{:name => "base", :value => "."}
+    %param{:name => "fullScreenTakeOver", :value => "Off"}
+    %param{:name => "bgcolor", :value => "#000000"}
+    %param{:name => "wmode", :value => "transparent"}
+    %param{:name => "contentScale", :value => "None"}
+    %param{:name => "flashvars", :value => "paramXMLPath=http://pixotour.com/themes/agusto/gallery.xml&xmlFilePath=http://pixotour.com/gallery.php?mlsid=21205926&m=1&img=25&initialURL=http://pixotour.com/21205926&panZoom=On&panZoomScale=1,1.5&smoothing=On"}
+  

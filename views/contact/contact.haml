@@ -1,0 +1,29 @@
+#contact
+  - @content_title = "Contact Muhle Custom Contracting"
+  %hr
+  %p{:id => 'address'}
+    Chad Muhle
+    %br
+    17812 Bel Air Circle
+    %br
+    Omaha, Ne 68136
+    %br
+    %span{:class => 'phone'} 402.709.4334
+    %br
+    %a{:href => 'mailto:chadmuhle@yahoo.com'} chadmuhle@yahoo.com
+  %h1 Have A Question?
+  %hr
+  %p
+    I believe my experience and passion for my business speaks for itself.  I appreciate any 
+    opportunities of service that I can provide.  I look forward to hearing from you soon!
+  %form{:id => 'contact', :action => '/contact/send', :method => 'post'}
+    %div
+      %input{:id => 'name', :name => 'name', :type => 'text', :placeholder => 'Name:'}
+    %div
+      %input{:id => 'email', :name => 'email', :type => 'text', :placeholder => 'E-Mail:'}
+    %div
+      %input{:id => 'phone', :name => 'email', :type => 'text', :placeholder => 'Phone:'}
+    %div
+      %textarea{:id => 'message', :name => 'message', :placeholder => 'Message:', :cols => '70', :rows => '15'}
+    %div
+      %input{:id => 'send', :name => 'send', :type => 'submit', :value => 'Send'}

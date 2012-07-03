@@ -32,26 +32,9 @@ class MuhleCustomContracting < Sinatra::Base
     haml "#{params[:section]}/#{params[:section]}".to_sym
   end
   
-  get '/:section/:page/?' do
-    haml "#{params[:section]}/#{params[:page]}/#{params[:page]}".to_sym
-  end
-  
-  get '/:section/:page/:subpage/?' do
-    haml "#{params[:section]}/#{params[:page]}/#{params[:subpage]}/#{params[:subpage]}".to_sym
-  end
-  
-  get '/:section/:page/:subpage/:division/?' do
-    haml "#{params[:section]}/#{params[:page]}/#{params[:subpage]}/#{params[:division]}/#{params[:division]}".to_sym
-  end
-  
-  post '/contact_us/contact' do
+  post '/contact/send' do
     Mailer.contact(params[:contact]).deliver
-    redirect '/contact_us'
-  end
-  
-  post '/contact_us/request_service' do
-    Mailer.request_service(params[:request_service]).deliver
-    redirect '/contact_us'
+    redirect '/contact'
   end
   
   get '/*' do
