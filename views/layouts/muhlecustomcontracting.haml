@@ -2,7 +2,6 @@
 %html
   %head
     %meta{:"http-equiv" => "Content-Type", :content => "text/html;charset=utf-8"}
-    %meta{:name => 'description', :content => ''}
     %link{:rel => 'icon', :type => 'image/vnd.microsoft.icon', :href => '/favicon.ico'}
     %link{:rel => 'shortcut icon', :type => 'image/vnd.microsoft.icon', :href => '/favicon.ico'}
     <!--[if ! lte IE 6]><!-->
@@ -14,6 +13,7 @@
     /[if lt IE 9]
       %script{:type => 'text/javascript', :src => 'http://html5shiv.googlecode.com/svn/trunk/html5.js'}
     %script{:type => 'text/javascript', :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'}
+    %script{:type => 'text/javascript', :src => '/javascripts/jquery.shadowbox.js'}
     %script{:type => 'text/javascript', :src => '/javascripts/muhlecustomcontracting.js'}
     :javascript
     
@@ -89,3 +89,12 @@
         %p
           E:
           %a{:href => 'mailto:chadmuhle@yahoo.com'} chadmuhle@yahoo.com
+    .shadowbox
+      .shadowbox_overlay
+      .shadowbox_window
+        %img{:src => '/images/custom_homes/originals/placeholder.png', :alt => 'image'}
+        %nav{:id => 'control_left'}
+          %a{:href => '#prev', :class => 'prev', :title => 'Previous'} <
+          %a{:href => '#next', :class => 'next', :title => 'Next'} >
+        %nav{:id => 'control_right'}
+          %a{:href => '#close', :class => 'close', :title => 'Close'} Close

@@ -2,6 +2,8 @@ var muhlecustomcontracting = {
   background_image: 0,
   
   run: function() {
+    $('div.shadowbox').shadowbox();
+    
     muhlecustomcontracting.initBackgroundImages();
     muhlecustomcontracting.addPlaceholders();
   },
