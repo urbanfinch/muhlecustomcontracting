@@ -13,6 +13,7 @@
       
       var run = function(selected_image, shadowbox, options) {
         $('div.shadowbox img').attr('src', $('img', selected_image).attr('data-original'));
+        $(shadowbox).show();
         $('div.shadowbox_overlay', shadowbox).show();
         $('div.shadowbox_window', shadowbox).fadeIn(1000);
         
@@ -43,8 +44,9 @@
           event.preventDefault();
         });
         $('a.' + options.close_button_class).click(function(event) {
-          $('div.shadowbox_window', shadowbox).fadeOut(1000);
+          $(shadowbox).hide();
           $('div.shadowbox_overlay', shadowbox).hide();
+          $('div.shadowbox_window', shadowbox).fadeOut(1000);
           event.preventDefault();
         });
       }

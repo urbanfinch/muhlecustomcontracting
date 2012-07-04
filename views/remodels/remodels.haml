@@ -2,13 +2,7 @@
   - @content_title = "Click On A Photo To View The Remodels Gallery"
   %hr
   .thumbnails
-    %a{:href => '/images/remodels/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/remodels/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/remodels/originals/placeholder.png'}
-    %a{:href => '/images/remodels/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/remodels/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/remodels/originals/placeholder.png'}
-    %a{:href => '/images/remodels/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/remodels/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/remodels/originals/placeholder.png'}
-    %a{:href => '/images/remodels/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/remodels/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/remodels/originals/placeholder.png'}
-    %a{:href => '/images/remodels/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/remodels/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/remodels/originals/placeholder.png'}
+    - @gallery = gallery('remodels')
+    - @gallery[:thumbnails].each_with_index do |thumbnail, index|
+      %a{:href => "/images/remodels/originals/#{@gallery[:originals][index][:token]}", :class => 'shadowbox'}
+        %img{:src => "/images/remodels/thumbnails/#{thumbnail[:token]}", :alt => thumbnail[:token], :'data-original' => "/images/remodels/originals/#{@gallery[:originals][index][:token]}"}

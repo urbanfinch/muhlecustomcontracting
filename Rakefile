@@ -13,7 +13,7 @@ namespace :compass do
 end
 
 namespace :muhlecustomcontracting do
-  desc "Start the Cashier console"
+  desc "Start the console"
   task :console do
     sh("irb -r #{Dir.pwd}/bootstrap.rb")
   end

@@ -24,6 +24,40 @@ class MuhleCustomContracting < Sinatra::Base
     end
   end
   
+  helpers do
+    def gallery(title)
+      original_paths = Dir["#{File.expand_path(File.join(File.dirname(__FILE__), "/public/images/#{title}/originals"))}/**/*"]
+      thumbnail_paths = Dir["#{File.expand_path(File.join(File.dirname(__FILE__), "/public/images/#{title}/thumbnails"))}/**/*"]
+      
+      originals = []
+      thumbnails = []
+      
+      original_paths.each do |path|
+        unless File.directory?(path)
+          originals.push({
+            :position => File.basename(path).split('_')[1].gsub('.png', '').to_i,
+            :title => File.basename(path).gsub('.png', '').split('_').drop(0).each{ |x| x.capitalize! }.join(' '),
+            :token => "#{File.basename(path).gsub('.md', '').split('_').drop(0).join('_')}"
+          })
+          originals.sort! { |a,b| a[:position] <=> b[:position] }
+        end
+      end
+      
+      thumbnail_paths.each do |path|
+        unless File.directory?(path)
+          thumbnails.push({
+            :position => File.basename(path).split('_')[1].gsub('.png', '').to_i,
+            :title => File.basename(path).gsub('.png', '').split('_').drop(0).each{ |x| x.capitalize! }.join(' '),
+            :token => "#{File.basename(path).gsub('.md', '').split('_').drop(0).join('_')}"
+          })
+          thumbnails.sort! { |a,b| a[:position] <=> b[:position] }
+        end
+      end
+      
+      return {:originals => originals, :thumbnails => thumbnails}
+    end
+  end
+  
   get '/' do
     redirect '/home'
   end

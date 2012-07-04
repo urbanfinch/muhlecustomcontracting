@@ -2,13 +2,7 @@
   - @content_title = "Click On A Photo To View The Custom Homes Gallery"
   %hr
   .thumbnails
-    %a{:href => '/images/custom_homes/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/custom_homes/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/custom_homes/originals/placeholder.png'}
-    %a{:href => '/images/custom_homes/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/custom_homes/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/custom_homes/originals/placeholder.png'}
-    %a{:href => '/images/custom_homes/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/custom_homes/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/custom_homes/originals/placeholder.png'}
-    %a{:href => '/images/custom_homes/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/custom_homes/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/custom_homes/originals/placeholder.png'}
-    %a{:href => '/images/custom_homes/originals/placeholder.png', :class => 'shadowbox'}
-      %img{:src => '/images/custom_homes/thumbnails/placeholder.png', :alt => 'thumbnail', :'data-original' => '/images/custom_homes/originals/placeholder.png'}
+    - @gallery = gallery('custom_homes')
+    - @gallery[:thumbnails].each_with_index do |thumbnail, index|
+      %a{:href => "/images/custom_homes/originals/#{@gallery[:originals][index][:token]}", :class => 'shadowbox'}
+        %img{:src => "/images/custom_homes/thumbnails/#{thumbnail[:token]}", :alt => thumbnail[:token], :'data-original' => "/images/custom_homes/originals/#{@gallery[:originals][index][:token]}"}
