@@ -63,7 +63,11 @@ class MuhleCustomContracting < Sinatra::Base
   end
   
   get '/:section/?' do
-    haml "#{params[:section]}/#{params[:section]}".to_sym
+    begin
+      haml "#{params[:section]}/#{params[:section]}".to_sym
+    rescue
+      pass
+    end
   end
   
   post '/contact/send' do
@@ -72,6 +76,10 @@ class MuhleCustomContracting < Sinatra::Base
   end
   
   get '/*' do
+    redirect '/'
+  end
+  
+  not_found do
     redirect '/'
   end
 end
